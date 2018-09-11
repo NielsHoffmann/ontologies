@@ -1,0 +1,96 @@
+[
+    {
+        "title": "0: Introduction",
+        "description": [
+            "This is a simple app to visualize and communicate the content of a knowledge base in the RDF format. The project is open source, and we welcome all who is interested to participate. Please find the Github repository [here](https://github.com/MadsHolten/sparql-visualizer).\n",
+            "The frontend of the app is based on [Angular](https://angular.io/), [material design](https://material.angular.io/) and [D3](https://d3js.org/) and the default local triplestore is based on [rdfstore](https://github.com/antoniogarrote/rdfstore-js). Since rdfstore does not fully support SPARQL 1.1 and has no reasoning capabilities, it is recomended to use a [Stardog](https://www.stardog.com/) based triplestore instead.",
+            "### Use a Stardog triplestore",
+            "To use the app with a Stardog triplestore this sparql-visualizer app must either be available online, or it must run in a local environment. You can find the instructions for installing a local version of this app under [Detailed installation guide](https://github.com/MadsHolten/sparql-visualizer)",
+            "With a local copy of the app running, make sure you have a Stardog running (defaults to port 5820) with an empty database (let's call it 'test'), so that you don't delete anything important. Then click the \"Switch to triplestore\" button and type in \"http://localhost:5820\" as endpoint and \"test\" as database. If you haven't changed the username and password they both default to \"admin\".",
+            "### Use the default local triplestore",
+            "This will work, but beware that some queries will not run properly, and INSERT/DELETE will not be possible.",
+            "### Resources",
+            "*[Documentation](https://www.w3.org/TR/sparql11-query/)\n",
+            "*[Online course in Linked Data Engineering](https://open.hpi.de/courses/semanticweb2016)"
+        ],
+        "query": "",
+        "triples": ""
+    },
+    {
+        "title": "1: Pizza test",
+        "description": [
+            "test to see if I can make pizza..."
+        ],
+        "triples": [
+            "PREFIX pizza: <http://www.co-ode.org/ontologies/pizza/pizza.owl#>",
+            "PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>",
+            "PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>",
+            "PREFIX owl:  <http://www.w3.org/2002/07/owl#>",
+            "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>",
+            "PREFIX inst: <http://binkhoffmann.org/sample#>",
+
+            "pizza:Food",
+            "rdf:type owl:Class ;",
+            "rdfs:label \"Food\"@en ;",
+            "rdfs:subClassOf pizza:DomainConcept ;",
+            "skos:prefLabel \"Food\"@en ; .",
+
+            "pizza:Pizza",
+            "rdf:type owl:Class ;",
+            "rdfs:label \"Pizza\"@en ;",
+            "rdfs:subClassOf pizza:Food ;",
+            "rdfs:subClassOf [",
+            "rdf:type owl:Restriction ;",
+            "owl:onProperty pizza:hasBase ;",
+            "owl:someValuesFrom pizza:PizzaBase ;",
+            "] ;",
+            "skos:prefLabel \"Pizza\"@en ; .",
+            "pizza:hasTopping",
+            "rdf:type owl:InverseFunctionalProperty ;",
+            "rdf:type owl:ObjectProperty ;",
+            "rdfs:comment \"Note that hasTopping is inverse functional because isToppingOf is functional\"@en ;",
+            "rdfs:domain pizza:Pizza ;",
+            "rdfs:range pizza:PizzaTopping ;",
+            "rdfs:subPropertyOf pizza:hasIngredient ;",
+            "owl:inverseOf pizza:isToppingOf ; .",
+            "pizza:PizzaTopping",
+            "rdf:type owl:Class ;",
+            "rdfs:label \"CoberturaDaPizza\"@pt ;",
+            "rdfs:label \"PizzaTopping\"@en ;",
+            "rdfs:subClassOf pizza:Food ;",
+            "skos:prefLabel \"Pizza Topping\"@en ; .",
+
+            "inst:myPizza",
+            "rdf:type pizza:Pizza ;",
+            "inst:hasTopping inst:myTopping ;",
+            "rdfs:label \"my pizza\" ; .",
+            
+            "inst:myTopping",
+            "rdf:type pizza:PizzaTopping ; .",
+
+            "inst:myFood",
+            "rdf:type pizza:Food ; ."
+
+            
+
+        ],
+        "query": [
+            "PREFIX pizza: <http://www.co-ode.org/ontologies/pizza/pizza.owl#>",
+            "PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>",
+            "PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>",
+            "PREFIX owl:  <http://www.w3.org/2002/07/owl#>",
+            "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>",
+            "PREFIX inst: <http://binkhoffmann.org/sample#>",
+
+            "CONSTRUCT",
+            "WHERE {",
+            "\t?p a pizza:Pizza .",
+            "\t?t a pizza:PizzaTopping .",
+            "\t?p ?s ?t .",   
+            "\t?p rdfs:label ?l .",
+            "\t?p rdfs:subClassOf ?f .",
+            "}"
+        ]
+    }
+    
+]
