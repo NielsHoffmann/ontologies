@@ -1,18 +1,13 @@
-# baseURI: http://binkhoffman.org/ontologies/top
+# baseURI: http://binkhoffmann.org/ontologies/top
 # prefix: top
 
-@prefix : <http://binkhoffman.org/ontologies/top#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix top: <http://binkhoffman.org/ontologies/top#> .
+@prefix top: <http://binkhoffmann.org/ontologies/top#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://binkhoffman.org/ontologies/top>
-  rdf:type owl:Ontology ;
-  owl:versionInfo "Created by Bink and Hoffmann" ;
-.
 <http://binkhoffman.org/ontologies/top#1DCoordinaat>
   rdf:type owl:Class ;
   rdfs:label "Eén dimensionaal coördinaat"@nl-nl ;
@@ -60,6 +55,10 @@
   owl:disjointWith <http://binkhoffman.org/ontologies/top#1DRuimte> ;
   owl:disjointWith <http://binkhoffman.org/ontologies/top#2DRuimte> ;
   owl:disjointWith top:NulDRuimte ;
+.
+<http://binkhoffmann.org/ontologies/top>
+  rdf:type owl:Ontology ;
+  owl:versionInfo "Created by Bink and Hoffmann" ;
 .
 top:AbstractObject
   rdf:type owl:Class ;
