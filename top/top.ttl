@@ -1,0 +1,757 @@
+# baseURI: http://binkhoffman.org/ontologies/top
+# prefix: top
+
+@prefix : <http://binkhoffman.org/ontologies/top#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix top: <http://binkhoffman.org/ontologies/top#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://binkhoffman.org/ontologies/top>
+  rdf:type owl:Ontology ;
+  owl:versionInfo "Created by Bink and Hoffmann" ;
+.
+<http://binkhoffman.org/ontologies/top#1DCoordinaat>
+  rdf:type owl:Class ;
+  rdfs:label "Eén dimensionaal coördinaat"@nl-nl ;
+  rdfs:subClassOf top:Coordinaat ;
+  owl:disjointWith <http://binkhoffman.org/ontologies/top#2DCoordinaat> ;
+  owl:disjointWith <http://binkhoffman.org/ontologies/top#3DCoordinaat> ;
+  skos:definition "Een één dimensionaal coördinaat is een coördinaat dan de ligging op een kromme aangeeft."@nl-nl ;
+.
+<http://binkhoffman.org/ontologies/top#1DRuimte>
+  rdf:type owl:Class ;
+  rdfs:label "Eén dimensionale ruimte"@nl-nl ;
+  rdfs:subClassOf top:FysiekeRuimte ;
+  owl:disjointWith <http://binkhoffman.org/ontologies/top#2DRuimte> ;
+  owl:disjointWith <http://binkhoffman.org/ontologies/top#3DRuimte> ;
+  owl:disjointWith top:NulDRuimte ;
+.
+<http://binkhoffman.org/ontologies/top#2DCoordinaat>
+  rdf:type owl:Class ;
+  rdfs:label "Twee dimensionaal coördinaat"@nl-nl ;
+  rdfs:subClassOf top:Coordinaat ;
+  owl:disjointWith <http://binkhoffman.org/ontologies/top#1DCoordinaat> ;
+  owl:disjointWith <http://binkhoffman.org/ontologies/top#3DCoordinaat> ;
+  skos:definition "Een twee dimensionaal coördinaat is een coördinaat dat de ligging op een (opper)vlak aangeeft."@nl-nl ;
+.
+<http://binkhoffman.org/ontologies/top#2DRuimte>
+  rdf:type owl:Class ;
+  rdfs:label "Twee dimensionale ruimte"@nl-nl ;
+  rdfs:subClassOf top:FysiekeRuimte ;
+  owl:disjointWith <http://binkhoffman.org/ontologies/top#1DRuimte> ;
+  owl:disjointWith <http://binkhoffman.org/ontologies/top#3DRuimte> ;
+  owl:disjointWith top:NulDRuimte ;
+.
+<http://binkhoffman.org/ontologies/top#3DCoordinaat>
+  rdf:type owl:Class ;
+  rdfs:label "Drie dimensionaal coördinaat"@nl-nl ;
+  rdfs:subClassOf top:Coordinaat ;
+  owl:disjointWith <http://binkhoffman.org/ontologies/top#1DCoordinaat> ;
+  owl:disjointWith <http://binkhoffman.org/ontologies/top#2DCoordinaat> ;
+  skos:definition "Een drie dimensionaal coördinaat is een coördinaat dan de ligging op in een ruimte aangeeft."@nl-nl ;
+.
+<http://binkhoffman.org/ontologies/top#3DRuimte>
+  rdf:type owl:Class ;
+  rdfs:label "Drie dimensionale ruimte"@nl-nl ;
+  rdfs:subClassOf top:FysiekeRuimte ;
+  owl:disjointWith <http://binkhoffman.org/ontologies/top#1DRuimte> ;
+  owl:disjointWith <http://binkhoffman.org/ontologies/top#2DRuimte> ;
+  owl:disjointWith top:NulDRuimte ;
+.
+top:AbstractObject
+  rdf:type owl:Class ;
+  rdfs:label "Abstract object"@nl-nl ;
+  rdfs:subClassOf top:FysiekeRuimte ;
+  owl:disjointWith top:FysiekObject ;
+.
+top:Activiteit
+  rdf:type owl:Class ;
+  rdfs:label "Activiteit"@nl-nl ;
+  rdfs:subClassOf owl:Thing ;
+  owl:disjointWith top:Kenmerk ;
+  owl:disjointWith top:Object ;
+  owl:disjointWith top:Rol ;
+  owl:disjointWith top:Verzameling ;
+  owl:disjointWith owl:Nothing ;
+  skos:definition "Een activiteit is een ding dat een kemerk van een object  of rol wijzigd."@nl-nl ;
+.
+top:Alinea
+  rdf:type owl:Class ;
+  rdfs:label "Alinea"@nl-nl ;
+  rdfs:subClassOf top:GeordendeVerzameling ;
+  owl:disjointWith top:Artikel ;
+  owl:disjointWith top:BoekStructuur ;
+  owl:disjointWith top:Deelhoofdstuk ;
+  owl:disjointWith top:EmailStructuur ;
+  owl:disjointWith top:Hoofdstuk ;
+  owl:disjointWith top:Lid ;
+  owl:disjointWith top:Paragraaf ;
+  owl:disjointWith top:Process ;
+.
+top:Artefact
+  rdf:type owl:Class ;
+  rdfs:label "Artefact"@nl-nl ;
+  rdfs:subClassOf top:FysiekObject ;
+  owl:disjointWith top:NatuurlijkObject ;
+.
+top:Artikel
+  rdf:type owl:Class ;
+  rdfs:label "Artikel"@nl-nl ;
+  rdfs:subClassOf top:GeordendeVerzameling ;
+  owl:disjointWith top:Alinea ;
+  owl:disjointWith top:BoekStructuur ;
+  owl:disjointWith top:Deelhoofdstuk ;
+  owl:disjointWith top:EmailStructuur ;
+  owl:disjointWith top:Hoofdstuk ;
+  owl:disjointWith top:Lid ;
+  owl:disjointWith top:Paragraaf ;
+  owl:disjointWith top:Process ;
+.
+top:Asset
+  rdf:type owl:Class ;
+  rdfs:label "Asset"@nl-nl ;
+  rdfs:subClassOf top:Rol ;
+  owl:disjointWith top:Functie ;
+  skos:definition "Een asset is een rol van een object dat van waarde is voor een persoon of organisatie."@nl-nl ;
+.
+top:Boek
+  rdf:type owl:Class ;
+  rdfs:label "Boek"@nl-nl ;
+  rdfs:subClassOf top:Informatie ;
+  owl:disjointWith top:Brief ;
+  owl:disjointWith top:Email ;
+  owl:disjointWith top:Memo ;
+  owl:disjointWith top:Organisatie ;
+  owl:disjointWith top:Rapport ;
+  owl:disjointWith top:Verslag ;
+.
+top:BoekStructuur
+  rdf:type owl:Class ;
+  rdfs:label "Boek"@nl-nl ;
+  rdfs:subClassOf top:GeordendeVerzameling ;
+  owl:disjointWith top:Alinea ;
+  owl:disjointWith top:Artikel ;
+  owl:disjointWith top:Deelhoofdstuk ;
+  owl:disjointWith top:EmailStructuur ;
+  owl:disjointWith top:Hoofdstuk ;
+  owl:disjointWith top:Lid ;
+  owl:disjointWith top:Paragraaf ;
+  owl:disjointWith top:Process ;
+.
+top:BolCoordinaat
+  rdf:type owl:Class ;
+  rdfs:label "Bol coördinaat"@nl-nl ;
+  rdfs:subClassOf <http://binkhoffman.org/ontologies/top#2DCoordinaat> ;
+  owl:disjointWith top:CylinderCoordinaat ;
+  owl:disjointWith top:VlakCoordinaat ;
+  skos:definition "Een bol coördinaat is een twee dimensionaal coördinaat dat de ligging op het oppervlak van een bol aangeeft."@nl-nl ;
+.
+top:Brief
+  rdf:type owl:Class ;
+  rdfs:label "Brief"@nl-nl ;
+  rdfs:subClassOf top:Informatie ;
+  owl:disjointWith top:Boek ;
+  owl:disjointWith top:Email ;
+  owl:disjointWith top:Memo ;
+  owl:disjointWith top:Organisatie ;
+  owl:disjointWith top:Rapport ;
+  owl:disjointWith top:Verslag ;
+.
+top:Code
+  rdf:type owl:Class ;
+  rdfs:label "Code"@nl-nl ;
+  rdfs:subClassOf top:Label ;
+  owl:disjointWith top:ID ;
+.
+top:Coordinaat
+  rdf:type owl:Class ;
+  rdfs:label "Coördinaat"@nl-nl ;
+  rdfs:subClassOf top:Kenmerk ;
+  owl:disjointWith top:Eenheid ;
+  owl:disjointWith top:ElectrischeStroom ;
+  owl:disjointWith top:Energie ;
+  owl:disjointWith top:Hoeveelheid ;
+  owl:disjointWith top:Label ;
+  owl:disjointWith top:Lengte ;
+  owl:disjointWith top:Lichtsterkte ;
+  owl:disjointWith top:Massa ;
+  owl:disjointWith top:Significantie ;
+  owl:disjointWith top:Temperatuur ;
+  owl:disjointWith top:Tijd ;
+  owl:disjointWith top:Tijdsduur ;
+  skos:definition "Een coördinaat is een kenmerk bestaande uit een set kengetallen waarmee de ligging van een punt in een coördinaatstelsel wordt aangegeven."@nl-nl ;
+.
+top:CylinderCoordinaat
+  rdf:type owl:Class ;
+  rdfs:label "Cylinder coördinaat"@nl-nl ;
+  rdfs:subClassOf <http://binkhoffman.org/ontologies/top#2DCoordinaat> ;
+  owl:disjointWith top:BolCoordinaat ;
+  owl:disjointWith top:VlakCoordinaat ;
+  skos:definition "Een cylinder coördinaat is een twee dimensionaal coördinaat dat de ligging op het oppervlak van een cylinder aangeeft."@nl-nl ;
+.
+top:Deelhoofdstuk
+  rdf:type owl:Class ;
+  rdfs:label "Deelhoofdstuk"@nl-nl ;
+  rdfs:subClassOf top:GeordendeVerzameling ;
+  owl:disjointWith top:Alinea ;
+  owl:disjointWith top:Artikel ;
+  owl:disjointWith top:BoekStructuur ;
+  owl:disjointWith top:EmailStructuur ;
+  owl:disjointWith top:Hoofdstuk ;
+  owl:disjointWith top:Lid ;
+  owl:disjointWith top:Paragraaf ;
+  owl:disjointWith top:Process ;
+.
+top:Dier
+  rdf:type owl:Class ;
+  rdfs:label "Dier"@nl-nl ;
+  rdfs:subClassOf top:NatuurlijkObject ;
+  owl:disjointWith top:Materiaal ;
+  owl:disjointWith top:Persoon ;
+  owl:disjointWith top:Plant ;
+.
+top:Eenheid
+  rdf:type owl:Class ;
+  rdfs:label "Eenheid"@nl-nl ;
+  rdfs:subClassOf top:Kenmerk ;
+  owl:disjointWith top:Coordinaat ;
+  owl:disjointWith top:ElectrischeStroom ;
+  owl:disjointWith top:Energie ;
+  owl:disjointWith top:Hoeveelheid ;
+  owl:disjointWith top:Label ;
+  owl:disjointWith top:Lengte ;
+  owl:disjointWith top:Lichtsterkte ;
+  owl:disjointWith top:Massa ;
+  owl:disjointWith top:Significantie ;
+  owl:disjointWith top:Temperatuur ;
+  owl:disjointWith top:Tijd ;
+  owl:disjointWith top:Tijdsduur ;
+  skos:definition "De eenheid is het kenmerk waarmee de waarde van een grootheid betekenis geeft."@nl-nl ;
+.
+top:ElectrischeStroom
+  rdf:type owl:Class ;
+  rdfs:label "Electrische stroom"@nl-nl ;
+  rdfs:subClassOf top:Kenmerk ;
+  owl:disjointWith top:Coordinaat ;
+  owl:disjointWith top:Eenheid ;
+  owl:disjointWith top:Energie ;
+  owl:disjointWith top:Hoeveelheid ;
+  owl:disjointWith top:Label ;
+  owl:disjointWith top:Lengte ;
+  owl:disjointWith top:Lichtsterkte ;
+  owl:disjointWith top:Massa ;
+  owl:disjointWith top:Significantie ;
+  owl:disjointWith top:Temperatuur ;
+  owl:disjointWith top:Tijd ;
+  owl:disjointWith top:Tijdsduur ;
+  skos:definition "De elecrische stroom is een kenmerk dat de verplaatsing van elektrische lading door een geleider uitdruikt."@nl-nl ;
+.
+top:Email
+  rdf:type owl:Class ;
+  rdfs:label "Email"@nl-nl ;
+  rdfs:subClassOf top:Informatie ;
+  owl:disjointWith top:Boek ;
+  owl:disjointWith top:Brief ;
+  owl:disjointWith top:Memo ;
+  owl:disjointWith top:Organisatie ;
+  owl:disjointWith top:Rapport ;
+  owl:disjointWith top:Verslag ;
+.
+top:EmailStructuur
+  rdf:type owl:Class ;
+  rdfs:label "Email"@nl-nl ;
+  rdfs:subClassOf top:GeordendeVerzameling ;
+  owl:disjointWith top:Alinea ;
+  owl:disjointWith top:Artikel ;
+  owl:disjointWith top:BoekStructuur ;
+  owl:disjointWith top:Deelhoofdstuk ;
+  owl:disjointWith top:Hoofdstuk ;
+  owl:disjointWith top:Lid ;
+  owl:disjointWith top:Paragraaf ;
+  owl:disjointWith top:Process ;
+.
+top:Energie
+  rdf:type owl:Class ;
+  rdfs:label "Energie"@nl-nl ;
+  rdfs:subClassOf top:Kenmerk ;
+  owl:disjointWith top:Coordinaat ;
+  owl:disjointWith top:Eenheid ;
+  owl:disjointWith top:ElectrischeStroom ;
+  owl:disjointWith top:Hoeveelheid ;
+  owl:disjointWith top:Label ;
+  owl:disjointWith top:Lengte ;
+  owl:disjointWith top:Lichtsterkte ;
+  owl:disjointWith top:Massa ;
+  owl:disjointWith top:Significantie ;
+  owl:disjointWith top:Temperatuur ;
+  owl:disjointWith top:Tijd ;
+  owl:disjointWith top:Tijdsduur ;
+  skos:definition "Energie is een eigenschap dat het vermogen om arbeid te verrichten aangeeft."@nl-nl ;
+.
+top:Functie
+  rdf:type owl:Class ;
+  rdfs:label "Functie"@nl-nl ;
+  rdfs:subClassOf top:Rol ;
+  owl:disjointWith top:Asset ;
+  skos:definition "Een functie is een rol bedoeld uitgevoerd te worden door een object."@nl-nl ;
+.
+top:FysiekObject
+  rdf:type owl:Class ;
+  rdfs:label "Fysiek object"@nl-nl ;
+  rdfs:subClassOf top:FysiekeRuimte ;
+  owl:disjointWith top:AbstractObject ;
+.
+top:FysiekeRuimte
+  rdf:type owl:Class ;
+  rdfs:label "Fysieke ruimte"@nl-nl ;
+  rdfs:subClassOf top:Object ;
+  owl:disjointWith top:Informatie ;
+  owl:disjointWith top:Systeem ;
+.
+top:GeordendeVerzameling
+  rdf:type owl:Class ;
+  rdfs:label "Geordende verzameling"@nl-nl ;
+  rdfs:subClassOf top:Verzameling ;
+  owl:disjointWith top:OngeordendeVerzameling ;
+  skos:definition "Een geordende verzameling is een verzameling waarvan de gebundelde dingen een volgorde hebben."@nl-nl ;
+.
+top:Grind
+  rdf:type owl:Class ;
+  rdfs:label "Grind"@nl-nl ;
+  rdfs:subClassOf top:Materiaal ;
+  owl:disjointWith top:Metaal ;
+  owl:disjointWith top:Zand ;
+.
+top:Hoeveelheid
+  rdf:type owl:Class ;
+  rdfs:label "Hoeveelheid"@nl-nl ;
+  rdfs:subClassOf top:Kenmerk ;
+  owl:disjointWith top:Coordinaat ;
+  owl:disjointWith top:Eenheid ;
+  owl:disjointWith top:ElectrischeStroom ;
+  owl:disjointWith top:Energie ;
+  owl:disjointWith top:Label ;
+  owl:disjointWith top:Lengte ;
+  owl:disjointWith top:Lichtsterkte ;
+  owl:disjointWith top:Massa ;
+  owl:disjointWith top:Significantie ;
+  owl:disjointWith top:Temperatuur ;
+  owl:disjointWith top:Tijd ;
+  owl:disjointWith top:Tijdsduur ;
+  skos:definition "De hoeveelheid is een kenmerk dat de kwantiteit waarin iets aanwezig is uitdrukt."@nl-nl ;
+.
+top:HoeveelheidStof
+  rdf:type owl:Class ;
+  rdfs:label "Hoeveelheid stof"@nl-nl ;
+  rdfs:subClassOf top:Hoeveelheid ;
+.
+top:Hoofdstuk
+  rdf:type owl:Class ;
+  rdfs:label "Hoofdstuk"@nl-nl ;
+  rdfs:subClassOf top:GeordendeVerzameling ;
+  owl:disjointWith top:Alinea ;
+  owl:disjointWith top:Artikel ;
+  owl:disjointWith top:BoekStructuur ;
+  owl:disjointWith top:Deelhoofdstuk ;
+  owl:disjointWith top:EmailStructuur ;
+  owl:disjointWith top:Lid ;
+  owl:disjointWith top:Paragraaf ;
+  owl:disjointWith top:Process ;
+.
+top:ID
+  rdf:type owl:Class ;
+  rdfs:label "ID"@nl-nl ;
+  rdfs:subClassOf top:Label ;
+  owl:disjointWith top:Code ;
+.
+top:IJzer
+  rdf:type owl:Class ;
+  rdfs:label "IJzer"@nl-nl ;
+  rdfs:subClassOf top:Metaal ;
+.
+top:Informatie
+  rdf:type owl:Class ;
+  rdfs:label "Informatie"@nl-nl ;
+  rdfs:subClassOf top:Object ;
+  owl:disjointWith top:FysiekeRuimte ;
+  owl:disjointWith top:Systeem ;
+  skos:definition "Informatie is een object dat kennis of betekenis heeft bedoeld om te gebruiken of over te dragen."@nl-nl ;
+.
+top:Kenmerk
+  rdf:type owl:Class ;
+  rdfs:label "Kenmerk"@nl-nl ;
+  rdfs:subClassOf owl:Thing ;
+  owl:disjointWith top:Activiteit ;
+  owl:disjointWith top:Object ;
+  owl:disjointWith top:Rol ;
+  owl:disjointWith top:Verzameling ;
+  owl:disjointWith owl:Nothing ;
+  skos:definition "Een kenmerk of eigenschap is een ding van een object waaraan men dat object kan onderscheiden of identificeren."@nl-nl ;
+.
+top:Label
+  rdf:type owl:Class ;
+  rdfs:label "Label"@nl-nl ;
+  rdfs:subClassOf top:Kenmerk ;
+  owl:disjointWith top:Coordinaat ;
+  owl:disjointWith top:Eenheid ;
+  owl:disjointWith top:ElectrischeStroom ;
+  owl:disjointWith top:Energie ;
+  owl:disjointWith top:Hoeveelheid ;
+  owl:disjointWith top:Lengte ;
+  owl:disjointWith top:Lichtsterkte ;
+  owl:disjointWith top:Massa ;
+  owl:disjointWith top:Significantie ;
+  owl:disjointWith top:Temperatuur ;
+  owl:disjointWith top:Tijd ;
+  owl:disjointWith top:Tijdsduur ;
+.
+top:Lengte
+  rdf:type owl:Class ;
+  rdfs:label "Lengte"@nl-nl ;
+  rdfs:subClassOf top:Kenmerk ;
+  owl:disjointWith top:Coordinaat ;
+  owl:disjointWith top:Eenheid ;
+  owl:disjointWith top:ElectrischeStroom ;
+  owl:disjointWith top:Energie ;
+  owl:disjointWith top:Hoeveelheid ;
+  owl:disjointWith top:Label ;
+  owl:disjointWith top:Lichtsterkte ;
+  owl:disjointWith top:Massa ;
+  owl:disjointWith top:Significantie ;
+  owl:disjointWith top:Temperatuur ;
+  owl:disjointWith top:Tijd ;
+  owl:disjointWith top:Tijdsduur ;
+  skos:definition "Een lengte is het kenmerk dat een ruimtelijke afstand aangeeft."@nl-nl ;
+.
+top:Lichtsterkte
+  rdf:type owl:Class ;
+  rdfs:label "Lichtsterkte"@nl-nl ;
+  rdfs:subClassOf top:Kenmerk ;
+  owl:disjointWith top:Coordinaat ;
+  owl:disjointWith top:Eenheid ;
+  owl:disjointWith top:ElectrischeStroom ;
+  owl:disjointWith top:Energie ;
+  owl:disjointWith top:Hoeveelheid ;
+  owl:disjointWith top:Label ;
+  owl:disjointWith top:Lengte ;
+  owl:disjointWith top:Massa ;
+  owl:disjointWith top:Significantie ;
+  owl:disjointWith top:Temperatuur ;
+  owl:disjointWith top:Tijd ;
+  owl:disjointWith top:Tijdsduur ;
+  skos:definition "De lichtsterkte is een kenmerk dat de mate van helderheid van een lichtbron uitdrukt."@nl-nl ;
+.
+top:Lid
+  rdf:type owl:Class ;
+  rdfs:label "Lid"@nl-nl ;
+  rdfs:subClassOf top:GeordendeVerzameling ;
+  owl:disjointWith top:Alinea ;
+  owl:disjointWith top:Artikel ;
+  owl:disjointWith top:BoekStructuur ;
+  owl:disjointWith top:Deelhoofdstuk ;
+  owl:disjointWith top:EmailStructuur ;
+  owl:disjointWith top:Hoofdstuk ;
+  owl:disjointWith top:Paragraaf ;
+  owl:disjointWith top:Process ;
+.
+top:Massa
+  rdf:type owl:Class ;
+  rdfs:label "Massa"@nl-nl ;
+  rdfs:subClassOf top:Kenmerk ;
+  owl:disjointWith top:Coordinaat ;
+  owl:disjointWith top:Eenheid ;
+  owl:disjointWith top:ElectrischeStroom ;
+  owl:disjointWith top:Energie ;
+  owl:disjointWith top:Hoeveelheid ;
+  owl:disjointWith top:Label ;
+  owl:disjointWith top:Lengte ;
+  owl:disjointWith top:Lichtsterkte ;
+  owl:disjointWith top:Significantie ;
+  owl:disjointWith top:Temperatuur ;
+  owl:disjointWith top:Tijd ;
+  owl:disjointWith top:Tijdsduur ;
+  skos:definition "De massa is een eigenschap van fysiek object die tot uitdrukking brengt in welke mate het zich verzet tegen veranderingen van snelheid."@nl-nl ;
+.
+top:Materiaal
+  rdf:type owl:Class ;
+  rdfs:label "Materiaal"@nl-nl ;
+  rdfs:subClassOf top:NatuurlijkObject ;
+  owl:disjointWith top:Dier ;
+  owl:disjointWith top:Persoon ;
+  owl:disjointWith top:Plant ;
+.
+top:Memo
+  rdf:type owl:Class ;
+  rdfs:label "Memo"@nl-nl ;
+  rdfs:subClassOf top:Informatie ;
+  owl:disjointWith top:Boek ;
+  owl:disjointWith top:Brief ;
+  owl:disjointWith top:Email ;
+  owl:disjointWith top:Organisatie ;
+  owl:disjointWith top:Rapport ;
+  owl:disjointWith top:Verslag ;
+.
+top:Metaal
+  rdf:type owl:Class ;
+  rdfs:label "Metaal"@nl-nl ;
+  rdfs:subClassOf top:Materiaal ;
+  owl:disjointWith top:Grind ;
+  owl:disjointWith top:Zand ;
+.
+top:NL-sfbCode
+  rdf:type owl:Class ;
+  rdfs:label "NL-sfb code"@nl-nl ;
+  rdfs:subClassOf top:Code ;
+  owl:disjointWith top:Postcode ;
+.
+top:NatuurlijkObject
+  rdf:type owl:Class ;
+  rdfs:label "Natuurlijk object"@nl-nl ;
+  rdfs:subClassOf top:FysiekObject ;
+  owl:disjointWith top:Artefact ;
+.
+top:NulDRuimte
+  rdf:type owl:Class ;
+  rdfs:label "Nul dimensionale ruimte"@nl-nl ;
+  rdfs:subClassOf top:FysiekeRuimte ;
+  owl:disjointWith <http://binkhoffman.org/ontologies/top#1DRuimte> ;
+  owl:disjointWith <http://binkhoffman.org/ontologies/top#2DRuimte> ;
+  owl:disjointWith <http://binkhoffman.org/ontologies/top#3DRuimte> ;
+.
+top:Object
+  rdf:type owl:Class ;
+  rdfs:label "Object"@nl-nl ;
+  rdfs:subClassOf owl:Thing ;
+  owl:disjointWith top:Activiteit ;
+  owl:disjointWith top:Kenmerk ;
+  owl:disjointWith top:Rol ;
+  owl:disjointWith top:Verzameling ;
+  owl:disjointWith owl:Nothing ;
+.
+top:OngeordendeVerzameling
+  rdf:type owl:Class ;
+  rdfs:label "Ongeordende verzameling"@nl-nl ;
+  rdfs:subClassOf top:Verzameling ;
+  owl:disjointWith top:GeordendeVerzameling ;
+  skos:definition "Een ongeordende verzameling is een verzameling waarvan de gebundelde dingen geen volgorde hebben."@nl-nl ;
+.
+top:Organisatie
+  rdf:type owl:Class ;
+  rdfs:label "Organisatie"@nl-nl ;
+  rdfs:subClassOf top:Informatie ;
+  owl:disjointWith top:Boek ;
+  owl:disjointWith top:Brief ;
+  owl:disjointWith top:Email ;
+  owl:disjointWith top:Memo ;
+  owl:disjointWith top:Rapport ;
+  owl:disjointWith top:Verslag ;
+  skos:definition "Een organisatie is informatie over een samenwerking tussen organisaties en/of personen."@nl-nl ;
+.
+top:Paragraaf
+  rdf:type owl:Class ;
+  rdfs:label "Paragraaf"@nl-nl ;
+  rdfs:subClassOf top:GeordendeVerzameling ;
+  owl:disjointWith top:Alinea ;
+  owl:disjointWith top:Artikel ;
+  owl:disjointWith top:BoekStructuur ;
+  owl:disjointWith top:Deelhoofdstuk ;
+  owl:disjointWith top:EmailStructuur ;
+  owl:disjointWith top:Hoofdstuk ;
+  owl:disjointWith top:Lid ;
+  owl:disjointWith top:Process ;
+.
+top:Persoon
+  rdf:type owl:Class ;
+  rdfs:label "Persoon"@nl-nl ;
+  rdfs:subClassOf top:NatuurlijkObject ;
+  owl:disjointWith top:Dier ;
+  owl:disjointWith top:Materiaal ;
+  owl:disjointWith top:Plant ;
+.
+top:Plant
+  rdf:type owl:Class ;
+  rdfs:label "Plant"@nl-nl ;
+  rdfs:subClassOf top:NatuurlijkObject ;
+  owl:disjointWith top:Dier ;
+  owl:disjointWith top:Materiaal ;
+  owl:disjointWith top:Persoon ;
+.
+top:Postcode
+  rdf:type owl:Class ;
+  rdfs:label "Postcode"@nl-nl ;
+  rdfs:subClassOf top:Code ;
+  owl:disjointWith top:NL-sfbCode ;
+.
+top:Prestatie
+  rdf:type owl:Class ;
+  rdfs:label "Prestatie"@nl-nl ;
+  rdfs:subClassOf top:Functie ;
+  skos:definition "Een prestatie is een functie met een erkend resultaat."@nl-nl ;
+.
+top:Process
+  rdf:type owl:Class ;
+  rdfs:label "Process"@nl-nl ;
+  rdfs:subClassOf top:GeordendeVerzameling ;
+  owl:disjointWith top:Alinea ;
+  owl:disjointWith top:Artikel ;
+  owl:disjointWith top:BoekStructuur ;
+  owl:disjointWith top:Deelhoofdstuk ;
+  owl:disjointWith top:EmailStructuur ;
+  owl:disjointWith top:Hoofdstuk ;
+  owl:disjointWith top:Lid ;
+  owl:disjointWith top:Paragraaf ;
+  skos:definition "Een proces is een geordende verzameling van activiteiten bedoeld om uit te voeren op een invoer tot een bepaalde uitvoer met behulp van bepaalde middelen volgens een bepaalde richtlijn of recept."@nl-nl ;
+.
+top:Rapport
+  rdf:type owl:Class ;
+  rdfs:label "Rapport"@nl-nl ;
+  rdfs:subClassOf top:Informatie ;
+  owl:disjointWith top:Boek ;
+  owl:disjointWith top:Brief ;
+  owl:disjointWith top:Email ;
+  owl:disjointWith top:Memo ;
+  owl:disjointWith top:Organisatie ;
+  owl:disjointWith top:Verslag ;
+.
+top:Rol
+  rdf:type owl:Class ;
+  rdfs:label "Rol"@nl-nl ;
+  rdfs:subClassOf owl:Thing ;
+  owl:disjointWith top:Activiteit ;
+  owl:disjointWith top:Kenmerk ;
+  owl:disjointWith top:Object ;
+  owl:disjointWith top:Verzameling ;
+  owl:disjointWith owl:Nothing ;
+  skos:definition "Een rol is iets (een ding) dat wordt gespeeld door een object in een activiteit of status."@nl-nl ;
+  skos:example "Een mok die dienst doet als presse papier. Dan is presse papier een rol van de mok."@nl-nl ;
+.
+top:Significantie
+  rdf:type owl:Class ;
+  rdfs:label "Significantie"@nl-nl ;
+  rdfs:subClassOf top:Kenmerk ;
+  owl:disjointWith top:Coordinaat ;
+  owl:disjointWith top:Eenheid ;
+  owl:disjointWith top:ElectrischeStroom ;
+  owl:disjointWith top:Energie ;
+  owl:disjointWith top:Hoeveelheid ;
+  owl:disjointWith top:Label ;
+  owl:disjointWith top:Lengte ;
+  owl:disjointWith top:Lichtsterkte ;
+  owl:disjointWith top:Massa ;
+  owl:disjointWith top:Temperatuur ;
+  owl:disjointWith top:Tijd ;
+  owl:disjointWith top:Tijdsduur ;
+.
+top:Systeem
+  rdf:type owl:Class ;
+  rdfs:label "Systeem"@nl-nl ;
+  rdfs:subClassOf top:Object ;
+  owl:disjointWith top:FysiekeRuimte ;
+  owl:disjointWith top:Informatie ;
+  skos:definition "Een systeem is een object bedoeld om een functie uit te voeren."@nl-nl ;
+.
+top:Temperatuur
+  rdf:type owl:Class ;
+  rdfs:label "Temperatuur"@nl-nl ;
+  rdfs:subClassOf top:Kenmerk ;
+  owl:disjointWith top:Coordinaat ;
+  owl:disjointWith top:Eenheid ;
+  owl:disjointWith top:ElectrischeStroom ;
+  owl:disjointWith top:Energie ;
+  owl:disjointWith top:Hoeveelheid ;
+  owl:disjointWith top:Label ;
+  owl:disjointWith top:Lengte ;
+  owl:disjointWith top:Lichtsterkte ;
+  owl:disjointWith top:Massa ;
+  owl:disjointWith top:Significantie ;
+  owl:disjointWith top:Tijd ;
+  owl:disjointWith top:Tijdsduur ;
+  skos:definition "De temperatuur is een kenmerk dat de mate van warmte uitdrukt."@nl-nl ;
+.
+top:Tijd
+  rdf:type owl:Class ;
+  rdfs:label "Tijd"@nl-nl ;
+  rdfs:subClassOf top:Kenmerk ;
+  owl:disjointWith top:Coordinaat ;
+  owl:disjointWith top:Eenheid ;
+  owl:disjointWith top:ElectrischeStroom ;
+  owl:disjointWith top:Energie ;
+  owl:disjointWith top:Hoeveelheid ;
+  owl:disjointWith top:Label ;
+  owl:disjointWith top:Lengte ;
+  owl:disjointWith top:Lichtsterkte ;
+  owl:disjointWith top:Massa ;
+  owl:disjointWith top:Significantie ;
+  owl:disjointWith top:Temperatuur ;
+  owl:disjointWith top:Tijdsduur ;
+.
+top:Tijdsduur
+  rdf:type owl:Class ;
+  rdfs:label "Tijdsduur"@nl-nl ;
+  rdfs:subClassOf top:Kenmerk ;
+  owl:disjointWith top:Coordinaat ;
+  owl:disjointWith top:Eenheid ;
+  owl:disjointWith top:ElectrischeStroom ;
+  owl:disjointWith top:Energie ;
+  owl:disjointWith top:Hoeveelheid ;
+  owl:disjointWith top:Label ;
+  owl:disjointWith top:Lengte ;
+  owl:disjointWith top:Lichtsterkte ;
+  owl:disjointWith top:Massa ;
+  owl:disjointWith top:Significantie ;
+  owl:disjointWith top:Temperatuur ;
+  owl:disjointWith top:Tijd ;
+.
+top:Vegetatie
+  rdf:type owl:Class ;
+  rdfs:label "Groen"@nl-nl ;
+  rdfs:subClassOf top:OngeordendeVerzameling ;
+  skos:definition "Vegetatie is een ongeordende verzameling van plantenleven (op een bepaalde plaats)."@nl-nl ;
+.
+top:Verslag
+  rdf:type owl:Class ;
+  rdfs:label "Verslag"@nl-nl ;
+  rdfs:subClassOf top:Informatie ;
+  owl:disjointWith top:Boek ;
+  owl:disjointWith top:Brief ;
+  owl:disjointWith top:Email ;
+  owl:disjointWith top:Memo ;
+  owl:disjointWith top:Organisatie ;
+  owl:disjointWith top:Rapport ;
+.
+top:Verzameling
+  rdf:type owl:Class ;
+  rdfs:label "Verzameling"@nl-nl ;
+  rdfs:subClassOf owl:Thing ;
+  owl:disjointWith top:Activiteit ;
+  owl:disjointWith top:Kenmerk ;
+  owl:disjointWith top:Object ;
+  owl:disjointWith top:Rol ;
+  owl:disjointWith owl:Nothing ;
+  skos:definition "Een verzameling is een ding dat een meervoud aan dingen bundelt op basis van een of meer gedeelde kenmerken."@nl-nl ;
+.
+top:VlakCoordinaat
+  rdf:type owl:Class ;
+  rdfs:label "Vlak coördinaat"@nl-nl ;
+  rdfs:subClassOf <http://binkhoffman.org/ontologies/top#2DCoordinaat> ;
+  owl:disjointWith top:BolCoordinaat ;
+  owl:disjointWith top:CylinderCoordinaat ;
+  skos:definition "Een vlak coördinaat is een twee dimensionaal coördinaat dat de ligging op een vlak aangeeft."@nl-nl ;
+.
+top:Zand
+  rdf:type owl:Class ;
+  rdfs:label "Zand"@nl-nl ;
+  rdfs:subClassOf top:Materiaal ;
+  owl:disjointWith top:Grind ;
+  owl:disjointWith top:Metaal ;
+.
+owl:Nothing
+  owl:disjointWith top:Activiteit ;
+  owl:disjointWith top:Kenmerk ;
+  owl:disjointWith top:Object ;
+  owl:disjointWith top:Rol ;
+  owl:disjointWith top:Verzameling ;
+.
