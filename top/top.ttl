@@ -8,54 +8,6 @@
 @prefix top: <http://binkhoffmann.org/ontologies/top#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://binkhoffman.org/ontologies/top#1DCoordinaat>
-  rdf:type owl:Class ;
-  rdfs:label "Eén dimensionaal coördinaat"@nl-nl ;
-  rdfs:subClassOf top:Coordinaat ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#2DCoordinaat> ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#3DCoordinaat> ;
-  skos:definition "Een één dimensionaal coördinaat is een coördinaat dan de ligging op een kromme aangeeft."@nl-nl ;
-.
-<http://binkhoffman.org/ontologies/top#1DRuimte>
-  rdf:type owl:Class ;
-  rdfs:label "Eén dimensionale ruimte"@nl-nl ;
-  rdfs:subClassOf top:FysiekeRuimte ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#2DRuimte> ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#3DRuimte> ;
-  owl:disjointWith top:NulDRuimte ;
-.
-<http://binkhoffman.org/ontologies/top#2DCoordinaat>
-  rdf:type owl:Class ;
-  rdfs:label "Twee dimensionaal coördinaat"@nl-nl ;
-  rdfs:subClassOf top:Coordinaat ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#1DCoordinaat> ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#3DCoordinaat> ;
-  skos:definition "Een twee dimensionaal coördinaat is een coördinaat dat de ligging op een (opper)vlak aangeeft."@nl-nl ;
-.
-<http://binkhoffman.org/ontologies/top#2DRuimte>
-  rdf:type owl:Class ;
-  rdfs:label "Twee dimensionale ruimte"@nl-nl ;
-  rdfs:subClassOf top:FysiekeRuimte ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#1DRuimte> ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#3DRuimte> ;
-  owl:disjointWith top:NulDRuimte ;
-.
-<http://binkhoffman.org/ontologies/top#3DCoordinaat>
-  rdf:type owl:Class ;
-  rdfs:label "Drie dimensionaal coördinaat"@nl-nl ;
-  rdfs:subClassOf top:Coordinaat ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#1DCoordinaat> ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#2DCoordinaat> ;
-  skos:definition "Een drie dimensionaal coördinaat is een coördinaat dan de ligging op in een ruimte aangeeft."@nl-nl ;
-.
-<http://binkhoffman.org/ontologies/top#3DRuimte>
-  rdf:type owl:Class ;
-  rdfs:label "Drie dimensionale ruimte"@nl-nl ;
-  rdfs:subClassOf top:FysiekeRuimte ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#1DRuimte> ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#2DRuimte> ;
-  owl:disjointWith top:NulDRuimte ;
-.
 <http://binkhoffmann.org/ontologies/top>
   rdf:type owl:Ontology ;
   owl:versionInfo "Created by Bink and Hoffmann" ;
@@ -143,7 +95,7 @@ top:BoekStructuur
 top:BolCoordinaat
   rdf:type owl:Class ;
   rdfs:label "Bol coördinaat"@nl-nl ;
-  rdfs:subClassOf <http://binkhoffman.org/ontologies/top#2DCoordinaat> ;
+  rdfs:subClassOf top:TweeDCoordinaat ;
   owl:disjointWith top:CylinderCoordinaat ;
   owl:disjointWith top:VlakCoordinaat ;
   skos:definition "Een bol coördinaat is een twee dimensionaal coördinaat dat de ligging op het oppervlak van een bol aangeeft."@nl-nl ;
@@ -186,7 +138,7 @@ top:Coordinaat
 top:CylinderCoordinaat
   rdf:type owl:Class ;
   rdfs:label "Cylinder coördinaat"@nl-nl ;
-  rdfs:subClassOf <http://binkhoffman.org/ontologies/top#2DCoordinaat> ;
+  rdfs:subClassOf top:TweeDCoordinaat ;
   owl:disjointWith top:BolCoordinaat ;
   owl:disjointWith top:VlakCoordinaat ;
   skos:definition "Een cylinder coördinaat is een twee dimensionaal coördinaat dat de ligging op het oppervlak van een cylinder aangeeft."@nl-nl ;
@@ -211,6 +163,38 @@ top:Dier
   owl:disjointWith top:Materiaal ;
   owl:disjointWith top:Persoon ;
   owl:disjointWith top:Plant ;
+.
+top:DrieDCoordinaat
+  rdf:type owl:Class ;
+  rdfs:label "Drie dimensionaal coördinaat"@nl-nl ;
+  rdfs:subClassOf top:Coordinaat ;
+  owl:disjointWith top:EenDCoordinaat ;
+  owl:disjointWith top:TweeDCoordinaat ;
+  skos:definition "Een drie dimensionaal coördinaat is een coördinaat dan de ligging op in een ruimte aangeeft."@nl-nl ;
+.
+top:DrieDRuimte
+  rdf:type owl:Class ;
+  rdfs:label "Drie dimensionale ruimte"@nl-nl ;
+  rdfs:subClassOf top:FysiekeRuimte ;
+  owl:disjointWith top:EenDRuimte ;
+  owl:disjointWith top:NulDRuimte ;
+  owl:disjointWith top:TweeDRuimte ;
+.
+top:EenDCoordinaat
+  rdf:type owl:Class ;
+  rdfs:label "Eén dimensionaal coördinaat"@nl-nl ;
+  rdfs:subClassOf top:Coordinaat ;
+  owl:disjointWith top:DrieDCoordinaat ;
+  owl:disjointWith top:TweeDCoordinaat ;
+  skos:definition "Een één dimensionaal coördinaat is een coördinaat dan de ligging op een kromme aangeeft."@nl-nl ;
+.
+top:EenDRuimte
+  rdf:type owl:Class ;
+  rdfs:label "Eén dimensionale ruimte"@nl-nl ;
+  rdfs:subClassOf top:FysiekeRuimte ;
+  owl:disjointWith top:DrieDRuimte ;
+  owl:disjointWith top:NulDRuimte ;
+  owl:disjointWith top:TweeDRuimte ;
 .
 top:Eenheid
   rdf:type owl:Class ;
@@ -516,9 +500,9 @@ top:NulDRuimte
   rdf:type owl:Class ;
   rdfs:label "Nul dimensionale ruimte"@nl-nl ;
   rdfs:subClassOf top:FysiekeRuimte ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#1DRuimte> ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#2DRuimte> ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#3DRuimte> ;
+  owl:disjointWith top:DrieDRuimte ;
+  owl:disjointWith top:EenDRuimte ;
+  owl:disjointWith top:TweeDRuimte ;
 .
 top:Object
   rdf:type owl:Class ;
@@ -704,6 +688,22 @@ top:Tijdsduur
   owl:disjointWith top:Temperatuur ;
   owl:disjointWith top:Tijd ;
 .
+top:TweeDCoordinaat
+  rdf:type owl:Class ;
+  rdfs:label "Twee dimensionaal coördinaat"@nl-nl ;
+  rdfs:subClassOf top:Coordinaat ;
+  owl:disjointWith top:DrieDCoordinaat ;
+  owl:disjointWith top:EenDCoordinaat ;
+  skos:definition "Een twee dimensionaal coördinaat is een coördinaat dat de ligging op een (opper)vlak aangeeft."@nl-nl ;
+.
+top:TweeDRuimte
+  rdf:type owl:Class ;
+  rdfs:label "Twee dimensionale ruimte"@nl-nl ;
+  rdfs:subClassOf top:FysiekeRuimte ;
+  owl:disjointWith top:DrieDRuimte ;
+  owl:disjointWith top:EenDRuimte ;
+  owl:disjointWith top:NulDRuimte ;
+.
 top:Vegetatie
   rdf:type owl:Class ;
   rdfs:label "Groen"@nl-nl ;
@@ -735,7 +735,7 @@ top:Verzameling
 top:VlakCoordinaat
   rdf:type owl:Class ;
   rdfs:label "Vlak coördinaat"@nl-nl ;
-  rdfs:subClassOf <http://binkhoffman.org/ontologies/top#2DCoordinaat> ;
+  rdfs:subClassOf top:TweeDCoordinaat ;
   owl:disjointWith top:BolCoordinaat ;
   owl:disjointWith top:CylinderCoordinaat ;
   skos:definition "Een vlak coördinaat is een twee dimensionaal coördinaat dat de ligging op een vlak aangeeft."@nl-nl ;
