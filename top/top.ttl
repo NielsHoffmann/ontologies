@@ -16,14 +16,6 @@
   owl:disjointWith <http://binkhoffman.org/ontologies/top#3DCoordinaat> ;
   skos:definition "Een één dimensionaal coördinaat is een coördinaat dan de ligging op een kromme aangeeft."@nl-nl ;
 .
-<http://binkhoffman.org/ontologies/top#1DRuimte>
-  rdf:type owl:Class ;
-  rdfs:label "Eén dimensionale ruimte"@nl-nl ;
-  rdfs:subClassOf top:FysiekeRuimte ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#2DRuimte> ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#3DRuimte> ;
-  owl:disjointWith top:NulDRuimte ;
-.
 <http://binkhoffman.org/ontologies/top#2DCoordinaat>
   rdf:type owl:Class ;
   rdfs:label "Twee dimensionaal coördinaat"@nl-nl ;
@@ -32,14 +24,6 @@
   owl:disjointWith <http://binkhoffman.org/ontologies/top#3DCoordinaat> ;
   skos:definition "Een twee dimensionaal coördinaat is een coördinaat dat de ligging op een (opper)vlak aangeeft."@nl-nl ;
 .
-<http://binkhoffman.org/ontologies/top#2DRuimte>
-  rdf:type owl:Class ;
-  rdfs:label "Twee dimensionale ruimte"@nl-nl ;
-  rdfs:subClassOf top:FysiekeRuimte ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#1DRuimte> ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#3DRuimte> ;
-  owl:disjointWith top:NulDRuimte ;
-.
 <http://binkhoffman.org/ontologies/top#3DCoordinaat>
   rdf:type owl:Class ;
   rdfs:label "Drie dimensionaal coördinaat"@nl-nl ;
@@ -47,14 +31,6 @@
   owl:disjointWith <http://binkhoffman.org/ontologies/top#1DCoordinaat> ;
   owl:disjointWith <http://binkhoffman.org/ontologies/top#2DCoordinaat> ;
   skos:definition "Een drie dimensionaal coördinaat is een coördinaat dan de ligging op in een ruimte aangeeft."@nl-nl ;
-.
-<http://binkhoffman.org/ontologies/top#3DRuimte>
-  rdf:type owl:Class ;
-  rdfs:label "Drie dimensionale ruimte"@nl-nl ;
-  rdfs:subClassOf top:FysiekeRuimte ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#1DRuimte> ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#2DRuimte> ;
-  owl:disjointWith top:NulDRuimte ;
 .
 <http://binkhoffmann.org/ontologies/top>
   rdf:type owl:Ontology ;
@@ -211,6 +187,22 @@ top:Dier
   owl:disjointWith top:Materiaal ;
   owl:disjointWith top:Persoon ;
   owl:disjointWith top:Plant ;
+.
+top:DrieDRuimte
+  rdf:type owl:Class ;
+  rdfs:label "Drie dimensionale ruimte"@nl-nl ;
+  rdfs:subClassOf top:FysiekeRuimte ;
+  owl:disjointWith top:EenDRuimte ;
+  owl:disjointWith top:NulDRuimte ;
+  owl:disjointWith top:TweeDRuimte ;
+.
+top:EenDRuimte
+  rdf:type owl:Class ;
+  rdfs:label "Eén dimensionale ruimte"@nl-nl ;
+  rdfs:subClassOf top:FysiekeRuimte ;
+  owl:disjointWith top:DrieDRuimte ;
+  owl:disjointWith top:NulDRuimte ;
+  owl:disjointWith top:TweeDRuimte ;
 .
 top:Eenheid
   rdf:type owl:Class ;
@@ -516,9 +508,9 @@ top:NulDRuimte
   rdf:type owl:Class ;
   rdfs:label "Nul dimensionale ruimte"@nl-nl ;
   rdfs:subClassOf top:FysiekeRuimte ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#1DRuimte> ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#2DRuimte> ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#3DRuimte> ;
+  owl:disjointWith top:DrieDRuimte ;
+  owl:disjointWith top:EenDRuimte ;
+  owl:disjointWith top:TweeDRuimte ;
 .
 top:Object
   rdf:type owl:Class ;
@@ -703,6 +695,14 @@ top:Tijdsduur
   owl:disjointWith top:Significantie ;
   owl:disjointWith top:Temperatuur ;
   owl:disjointWith top:Tijd ;
+.
+top:TweeDRuimte
+  rdf:type owl:Class ;
+  rdfs:label "Twee dimensionale ruimte"@nl-nl ;
+  rdfs:subClassOf top:FysiekeRuimte ;
+  owl:disjointWith top:DrieDRuimte ;
+  owl:disjointWith top:EenDRuimte ;
+  owl:disjointWith top:NulDRuimte ;
 .
 top:Vegetatie
   rdf:type owl:Class ;
