@@ -88,7 +88,6 @@
             "\t?t a pizza:PizzaTopping .",
             "\t?p ?s ?t .",   
             "\t?p rdfs:label ?l .",
-            "\t?p rdfs:subClassOf ?f .",
             "}"
         ]
     }
