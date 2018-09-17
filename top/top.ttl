@@ -500,9 +500,9 @@ top:NulDRuimte
   rdf:type owl:Class ;
   rdfs:label "Nul dimensionale ruimte"@nl-nl ;
   rdfs:subClassOf top:FysiekeRuimte ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#1DRuimte> ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#2DRuimte> ;
-  owl:disjointWith <http://binkhoffman.org/ontologies/top#3DRuimte> ;
+  owl:disjointWith top:DrieDRuimte ;
+  owl:disjointWith top:EenDRuimte ;
+  owl:disjointWith top:TweeDRuimte ;
 .
 top:Object
   rdf:type owl:Class ;
