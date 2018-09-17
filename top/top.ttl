@@ -1,4 +1,5 @@
 # baseURI: http://binkhoffmann.org/ontologies/top
+# imports: http://www.w3.org/2004/02/skos/core
 # prefix: top
 
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -10,13 +11,15 @@
 
 <http://binkhoffmann.org/ontologies/top>
   rdf:type owl:Ontology ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:versionInfo "Created by Bink and Hoffmann" ;
 .
 top:AbstractObject
   rdf:type owl:Class ;
   rdfs:label "Abstract object"@nl-nl ;
-  rdfs:subClassOf top:FysiekeRuimte ;
+  rdfs:subClassOf top:Object ;
   owl:disjointWith top:FysiekObject ;
+  skos:definition "Object wat geen fysieke eigenschappen heeft"@nl-nl ;
 .
 top:Activiteit
   rdf:type owl:Class ;
@@ -195,6 +198,7 @@ top:EenDRuimte
   owl:disjointWith top:DrieDRuimte ;
   owl:disjointWith top:NulDRuimte ;
   owl:disjointWith top:TweeDRuimte ;
+  skos:example "lijnobject" ;
 .
 top:Eenheid
   rdf:type owl:Class ;
@@ -503,6 +507,7 @@ top:NulDRuimte
   owl:disjointWith top:DrieDRuimte ;
   owl:disjointWith top:EenDRuimte ;
   owl:disjointWith top:TweeDRuimte ;
+  skos:example "puntobject" ;
 .
 top:Object
   rdf:type owl:Class ;
@@ -703,6 +708,7 @@ top:TweeDRuimte
   owl:disjointWith top:DrieDRuimte ;
   owl:disjointWith top:EenDRuimte ;
   owl:disjointWith top:NulDRuimte ;
+  skos:example "vlakobject" ;
 .
 top:Vegetatie
   rdf:type owl:Class ;
