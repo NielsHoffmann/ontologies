@@ -14,11 +14,11 @@
         "description": [
             "De __OTL__ van Provincie Noord-Holland is modulair opgebouwd met een kern structuur die een taxonomie biedt.",
             "De verschillende 'viewpoints' (zoals SE en geo) zijn als losse ontologieen opgezet die vervolgens via een mapping aan de kern zijn gekoppeld.",
-            "Via de otl: namespace worden alle deelverzamelingen bijelkaar gebracht zodat de OTL in zijn geheel bekeken/bevraagd kan worden",
-            "![otl architectuur][https://github.com/NielsHoffmann/ontologies/blob/master/doc/otl-pnh.jpg?raw=true]"
+            "Via de otl: namespace worden alle deelverzamelingen bijelkaar gebracht zodat de OTL in zijn geheel bekeken/bevraagd kan worden"
         ],
-        "query": "",
-        "triples": ""
+        "triples": "PREFIX top: <http://binkhoffmann.org/ontologies/top#>\nPREFIX core: <http://otl.noord-holland.nl/core/>\nPREFIX otl: <http://otl.noord-holland.nl/otl/new/> \nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl:  <http://www.w3.org/2002/07/owl#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n",
+        "query": "PREFIX top: <http://binkhoffmann.org/ontologies/top#>\nPREFIX core: <http://otl.noord-holland.nl/core/>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl:  <http://www.w3.org/2002/07/owl#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX"
+        
     },
     {
         "title": "De OTL uitgelegd: Ruimtelijke en Fysieke Objecten...",
