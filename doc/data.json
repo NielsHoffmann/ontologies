@@ -1,11 +1,7 @@
 [
     {
         "title": "Introductie",
-        "description": [
-            "Dit is een interactieve uitleg van de OTL van Provincie Noord-Holland",
-            "Deze visualisatie wordt mogelijke gemaakt door de Sparql-Visualizer tool van Mads Holten: [https://madsholten.github.io/sparql-visualizer/]",
-            "In de volgende blokken staan een aantal voorbeelden hoe de OTL is opgezet en hoe deze gebruikt kan worden"
-        ],
+        "description": "Dit is een interactieve uitleg van de OTL van Provincie Noord-Holland.\nDeze visualisatie wordt mogelijke gemaakt door de Sparql-Visualizer tool van Mads Holten: [https://madsholten.github.io/sparql-visualizer/]\n\nIn de volgende blokken staan een aantal voorbeelden hoe de OTL is opgezet en hoe deze gebruikt kan worden. Hierboven kun je achtereenvolgens verschillende datasets bekijken die illusteren hoe de OTL is opgebouwd.",
         "query": "",
         "triples": ""
     },
