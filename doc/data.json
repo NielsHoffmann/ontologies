@@ -93,59 +93,9 @@
     },
     {
         "title": "2: OTL Fysieke Ruimte en Fysieke Objecten...",
-        "description": [
-            "In de OTL wordt onderscheid gemaakt tussen ruimtelijke objecten en fysieke objecten. Een fysiek object is het tastbare, materiële ding in de werkelijkheid. Bijvoorbeeld de asfalt plak waar de weg van gemaakt is.",
-            "Het totale 'concept' van de weg is eigenlijk een ruimtelijk object van alles wat samen 'de weg' maakt. Hier zou je de obstakelvrije zone als afbakening voor kunnen gebruiken.",
-            "In dit voorbeeld is dat uitgewerkt met de relatie 'realiseert'/'wordtGerealiseerdDoor' als verbinding tussen het fysieke object en het ruimtelijke object."
-        ],
-        "triples": [
-            "PREFIX core: <http://otl.noord-holland.nl/core/>",
-            "PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>",
-            "PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>",
-            "PREFIX owl:  <http://www.w3.org/2002/07/owl#>",
-            "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>",
-            "PREFIX inst: <http://binkhoffmann.org/sample/>",
-
-            "core:Wegvak",
-                "rdf:type owl:Class ;",
-                "core:wordtGerealiseerdDoor core:Wegdeel ;",
-                "rdfs:label \"Wegvak\" ; .",
-                
-
-            "core:Wegdeel",
-                "rdf:type owl:Class ;",
-                "core:realiseert core:Wegvak ;",
-                "rdfs:label \"Wegdeel\" ; .",
-                
-
-            "core:wordtGerealiseerdDoor",
-            "rdf:type owl:ObjectProperty ;",
-            "rdfs:label \"wordt gerealiseerd door\" ; .",
-
-            "inst:eenWegvak",
-                "rdf:type core:Wegvak ; ",
-                "rdfs:label \"eenWegvak\" ; ",
-                "core:wordtGerealiseerdDoor inst:eenWegdeel ; .",
-
-                "inst:eenWegdeel",
-                "rdf:type core:Wegdeel ; ",
-                "rdfs:label \"eenWegdeel\" ; ."
-        ],
-        "query": [
-            "PREFIX core: <http://otl.noord-holland.nl/core/>",
-            "PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>",
-            "PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>",
-            "PREFIX owl:  <http://www.w3.org/2002/07/owl#>",
-            "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>",
-            "PREFIX inst: <http://binkhoffmann.org/sample#>",
-
-            "CONSTRUCT",
-            "WHERE {",
-            "\t?wd a core:Wegdeel .",
-            "\t?wv a core:Wegvak .",
-            "\t?wv core:wordtGerealiseerdDoor ?wd .",   
-            "}"
-        ]
-    }
+        "description": "In de OTL wordt onderscheid gemaakt tussen ruimtelijke objecten en fysieke objecten. Een fysiek object is het tastbare, materiële ding in de werkelijkheid. Bijvoorbeeld de asfalt plak waar de weg van gemaakt is.\nHet totale 'concept' van de weg is eigenlijk een ruimtelijk object van alles wat samen 'de weg' maakt. Hier zou je de obstakelvrije zone als afbakening voor kunnen gebruiken.\nIn dit voorbeeld is dat uitgewerkt met de relatie 'realiseert'/'wordtGerealiseerdDoor' als verbinding tussen het fysieke object en het ruimtelijke object.",
+        "triples": "PREFIX core: <http://otl.noord-holland.nl/core/>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl:  <http://www.w3.org/2002/07/owl#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX inst: <http://binkhoffmann.org/sample/>\ncore:Wegvak\nrdf:type owl:Class ;\ncore:wordtGerealiseerdDoor core:Wegdeel ;\nrdfs:label \"Wegvak\" ; \n  rdfs:subClassOf core:WegLink ;\n.\ncore:Wegdeel\nrdf:type owl:Class ;\ncore:realiseert core:Wegvak ;\nrdfs:label \"Wegdeel\" ; \n rdfs:subClassOf core:FysiekObject ;\n.\ncore:wordtGerealiseerdDoor\nrdf:type owl:ObjectProperty ;\nrdfs:label \"wordt gerealiseerd door\" ; \n \n.\ninst:eenWegvak\nrdf:type core:Wegvak ; \nrdfs:label \"eenWegvak\" ; \ncore:wordtGerealiseerdDoor inst:eenWegdeel ; .\ninst:eenWegdeel\nrdf:type core:Wegdeel ; \nrdfs:label \"eenWegdeel\" ; .\ncore:DrieDRuimte\n  rdf:type owl:Class ;\n  rdfs:label \"Drie DObject\" ;\n  rdfs:subClassOf core:FysiekeRuimte ;\n.\ncore:FunctioneelGebied\n  rdf:type owl:Class ;\n  rdfs:label \"Functioneel gebied\" ;\n  rdfs:subClassOf core:DrieDRuimte ;\n.\ncore:FysiekObject\n  rdf:type owl:Class ;\n  rdfs:label \"Fysiek object\" ;\n  rdfs:subClassOf core:FysiekeRuimte ;\n.\ncore:FysiekeRuimte\n  rdf:type owl:Class ;\n  rdfs:label \"Fysieke ruimte\" ;\n  rdfs:subClassOf core:Object ;\n.\ncore:NetwerkGebied\n  rdf:type owl:Class ;\n  rdfs:label \"Netwerk gebied\" ;\n  rdfs:subClassOf core:FunctioneelGebied ;\n.\ncore:NetwerkLink\n  rdf:type owl:Class ;\n  rdfs:label \"Netwerk link\" ;\n  rdfs:subClassOf core:NetwerkGebied ;\n.\ncore:WegLink\n  rdf:type owl:Class ;\n  rdfs:label \"Weg link\" ;\n  rdfs:subClassOf core:NetwerkLink ;\n.\ncore:Object\n    rdf:type owl:Class ;\t\n   rdfs:subClassOf owl:Thing ;\n.",
+        "query": "PREFIX core: <http://otl.noord-holland.nl/core/>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl:  <http://www.w3.org/2002/07/owl#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX inst: <http://binkhoffmann.org/sample#>\nCONSTRUCT\nWHERE {\n\t?wd a core:Wegdeel .\n\t?wv a core:Wegvak .\n\t?wv core:wordtGerealiseerdDoor ?wd .\n  \tcore:Wegvak rdfs:subClassOf core:WegLink .\n  core:WegLink rdfs:subClassOf core:NetwerkLink .\n  core:NetwerkLink rdfs:subClassOf core:NetwerkGebied .\n  core:NetwerkGebied rdfs:subClassOf core:FunctioneelGebied .\n  core:FunctioneelGebied rdfs:subClassOf core:DrieDRuimte .\n  core:DrieDRuimte rdfs:subClassOf core:FysiekeRuimte .\n  core:Wegdeel rdfs:subClassOf core:FysiekObject .\n  core:FysiekObject rdfs:subClassOf core:FysiekeRuimte .  \n  core:FysiekeRuimte rdfs:subClassOf core:Object .\n}"
+      }
     
 ]
