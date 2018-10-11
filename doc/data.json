@@ -15,7 +15,7 @@
             "De __OTL__ van Provincie Noord-Holland is modulair opgebouwd met een kern structuur die een taxonomie biedt.",
             "De verschillende 'viewpoints' (zoals SE en geo) zijn als losse ontologieen opgezet die vervolgens via een mapping aan de kern zijn gekoppeld.",
             "Via de otl: namespace worden alle deelverzamelingen bijelkaar gebracht zodat de OTL in zijn geheel bekeken/bevraagd kan worden",
-            "![otl architectuur][otl-pnh.jpg]"
+            "![otl architectuur][https://github.com/NielsHoffmann/ontologies/blob/master/doc/otl-pnh.jpg?raw=true]"
         ],
         "query": "",
         "triples": ""
