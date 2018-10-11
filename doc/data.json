@@ -104,27 +104,33 @@
             "PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>",
             "PREFIX owl:  <http://www.w3.org/2002/07/owl#>",
             "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>",
-            "PREFIX inst: <http://binkhoffmann.org/sample#>",
+            "PREFIX inst: <http://binkhoffmann.org/sample/>",
 
             "core:Wegvak",
                 "rdf:type owl:Class ;",
                 "core:wordtGerealiseerdDoor core:Wegdeel ;",
                 "rdfs:label \"Wegvak\" ;",
-                "rdfs:subClassOf core:WegLink ;\"",
+                "rdfs:subClassOf core:WegLink ;\" .",
 
             "core:Wegdeel",
                 "rdf:type owl:Class ;",
                 "core:realiseert core:Wegvak ;",
                 "rdfs:label \"Wegdeel\" ;",
-                "rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#FysiekObject> ;",
+                "rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#FysiekObject> ; .",
+
+            "core:wordtGerealiseerdDoor",
+            "rdf:type owl:ObjectProperty ;",
+            "rdfs:label \"wordt gerealiseerd door\" ;",
+            "owl:inverseOf core:realiseert ; .",
 
             "inst:eenWegvak",
-                "rdf:type core:Wegvak ; .",
-                "rdfs:label \"eenWegvak\" ;",
+                "rdf:type core:Wegvak ; ",
+                "rdfs:label \"eenWegvak\" ; ",
+                "core:wordtGerealiseerdDoor inst:eenWegdeel ; .",
 
                 "inst:eenWegdeel",
-                "rdf:type core:Wegdeel ; .",
-                "rdfs:label \"eenWegdeel\" ;"
+                "rdf:type core:Wegdeel ; ",
+                "rdfs:label \"eenWegdeel\" ; ."
         ],
         "query": [
             "PREFIX core: <http://otl.noord-holland.nl/core/>",
@@ -138,8 +144,7 @@
             "WHERE {",
             "\t?wd a core:Wegdeel .",
             "\t?wv a core:Wegvak .",
-            "\t?wd ?p ?wv .",   
-            "\t?p rdfs:label ?l .",
+            "\t?wv core:wordtGerealiseerdDoor ?wd .",   
             "}"
         ]
     }
