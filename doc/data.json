@@ -90,6 +90,58 @@
             "\t?p rdfs:label ?l .",
             "}"
         ]
+    },
+    {
+        "title": "2: OTL Fysieke Ruimte en Fysieke Objecten...",
+        "description": [
+            "In de OTL wordt onderscheid gemaakt tussen ruimtelijke objecten en fysieke objecten. Een fysiek object is het tastbare, materiële ding in de werkelijkheid. Bijvoorbeeld de asfalt plak waar de weg van gemaakt is.",
+            "Het totale 'concept' van de weg is eigenlijk een ruimtelijk object van alles wat samen 'de weg' maakt. Hier zou je de obstakelvrije zone als afbakening voor kunnen gebruiken.",
+            "In dit voorbeeld is dat uitgewerkt met de relatie 'realiseert'/'wordtGerealiseerdDoor' als verbinding tussen het fysieke object en het ruimtelijke object."
+        ],
+        "triples": [
+            "PREFIX core: <http://otl.noord-holland.nl/core/>",
+            "PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>",
+            "PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>",
+            "PREFIX owl:  <http://www.w3.org/2002/07/owl#>",
+            "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>",
+            "PREFIX inst: <http://binkhoffmann.org/sample#>",
+
+            "core:Wegvak",
+                "rdf:type owl:Class ;",
+                "core:wordtGerealiseerdDoor core:Wegdeel ;",
+                "rdfs:label \"Wegvak\" ;",
+                "rdfs:subClassOf core:WegLink ;\"",
+
+            "core:Wegdeel",
+                "rdf:type owl:Class ;",
+                "core:realiseert core:Wegvak ;",
+                "rdfs:label \"Wegdeel\" ;",
+                "rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#FysiekObject> ;",
+
+            "inst:eenWegvak",
+                "rdf:type core:Wegvak ; .",
+                "rdfs:label \"eenWegvak\" ;",
+
+                "inst:eenWegdeel",
+                "rdf:type core:Wegdeel ; .",
+                "rdfs:label \"eenWegdeel\" ;"
+        ],
+        "query": [
+            "PREFIX core: <http://otl.noord-holland.nl/core/>",
+            "PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>",
+            "PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>",
+            "PREFIX owl:  <http://www.w3.org/2002/07/owl#>",
+            "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>",
+            "PREFIX inst: <http://binkhoffmann.org/sample#>",
+
+            "CONSTRUCT",
+            "WHERE {",
+            "\t?wd a core:Wegdeel .",
+            "\t?wv a core:Wegvak .",
+            "\t?wd ?p ?wv .",   
+            "\t?p rdfs:label ?l .",
+            "}"
+        ]
     }
     
 ]
