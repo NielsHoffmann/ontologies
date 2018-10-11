@@ -109,19 +109,18 @@
             "core:Wegvak",
                 "rdf:type owl:Class ;",
                 "core:wordtGerealiseerdDoor core:Wegdeel ;",
-                "rdfs:label \"Wegvak\" ;",
-                "rdfs:subClassOf core:WegLink ;\" .",
+                "rdfs:label \"Wegvak\" ; .",
+                
 
             "core:Wegdeel",
                 "rdf:type owl:Class ;",
                 "core:realiseert core:Wegvak ;",
-                "rdfs:label \"Wegdeel\" ;",
-                "rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#FysiekObject> ; .",
+                "rdfs:label \"Wegdeel\" ; .",
+                
 
             "core:wordtGerealiseerdDoor",
             "rdf:type owl:ObjectProperty ;",
-            "rdfs:label \"wordt gerealiseerd door\" ;",
-            "owl:inverseOf core:realiseert ; .",
+            "rdfs:label \"wordt gerealiseerd door\" ; .",
 
             "inst:eenWegvak",
                 "rdf:type core:Wegvak ; ",
