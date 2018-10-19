@@ -16,13 +16,14 @@
 .
 top:AbstractObject
   rdf:type owl:Class ;
+  rdfs:comment "Object wat geen fysieke eigenschappen heeft"@nl-nl ;
   rdfs:label "Abstract object"@nl-nl ;
   rdfs:subClassOf top:Object ;
   owl:disjointWith top:FysiekObject ;
-  skos:definition "Object wat geen fysieke eigenschappen heeft"@nl-nl ;
 .
 top:Activiteit
   rdf:type owl:Class ;
+  rdfs:comment "Een activiteit is een ding dat een kemerk van een object  of rol wijzigd."@nl-nl ;
   rdfs:label "Activiteit"@nl-nl ;
   rdfs:subClassOf owl:Thing ;
   owl:disjointWith top:Kenmerk ;
@@ -30,7 +31,6 @@ top:Activiteit
   owl:disjointWith top:Rol ;
   owl:disjointWith top:Verzameling ;
   owl:disjointWith owl:Nothing ;
-  skos:definition "Een activiteit is een ding dat een kemerk van een object  of rol wijzigd."@nl-nl ;
 .
 top:Alinea
   rdf:type owl:Class ;
@@ -66,10 +66,10 @@ top:Artikel
 .
 top:Asset
   rdf:type owl:Class ;
+  rdfs:comment "Een asset is een rol van een object dat van waarde is voor een persoon of organisatie."@nl-nl ;
   rdfs:label "Asset"@nl-nl ;
   rdfs:subClassOf top:Rol ;
   owl:disjointWith top:Functie ;
-  skos:definition "Een asset is een rol van een object dat van waarde is voor een persoon of organisatie."@nl-nl ;
 .
 top:Boek
   rdf:type owl:Class ;
@@ -97,11 +97,11 @@ top:BoekStructuur
 .
 top:BolCoordinaat
   rdf:type owl:Class ;
+  rdfs:comment "Een bol coördinaat is een twee dimensionaal coördinaat dat de ligging op het oppervlak van een bol aangeeft."@nl-nl ;
   rdfs:label "Bol coördinaat"@nl-nl ;
   rdfs:subClassOf top:TweeDCoordinaat ;
   owl:disjointWith top:CylinderCoordinaat ;
   owl:disjointWith top:VlakCoordinaat ;
-  skos:definition "Een bol coördinaat is een twee dimensionaal coördinaat dat de ligging op het oppervlak van een bol aangeeft."@nl-nl ;
 .
 top:Brief
   rdf:type owl:Class ;
@@ -122,6 +122,7 @@ top:Code
 .
 top:Coordinaat
   rdf:type owl:Class ;
+  rdfs:comment "Een coördinaat is een kenmerk bestaande uit een set kengetallen waarmee de ligging van een punt in een coördinaatstelsel wordt aangegeven."@nl-nl ;
   rdfs:label "Coördinaat"@nl-nl ;
   rdfs:subClassOf top:Kenmerk ;
   owl:disjointWith top:Eenheid ;
@@ -136,15 +137,14 @@ top:Coordinaat
   owl:disjointWith top:Temperatuur ;
   owl:disjointWith top:Tijd ;
   owl:disjointWith top:Tijdsduur ;
-  skos:definition "Een coördinaat is een kenmerk bestaande uit een set kengetallen waarmee de ligging van een punt in een coördinaatstelsel wordt aangegeven."@nl-nl ;
 .
 top:CylinderCoordinaat
   rdf:type owl:Class ;
+  rdfs:comment "Een cylinder coördinaat is een twee dimensionaal coördinaat dat de ligging op het oppervlak van een cylinder aangeeft."@nl-nl ;
   rdfs:label "Cylinder coördinaat"@nl-nl ;
   rdfs:subClassOf top:TweeDCoordinaat ;
   owl:disjointWith top:BolCoordinaat ;
   owl:disjointWith top:VlakCoordinaat ;
-  skos:definition "Een cylinder coördinaat is een twee dimensionaal coördinaat dat de ligging op het oppervlak van een cylinder aangeeft."@nl-nl ;
 .
 top:Deelhoofdstuk
   rdf:type owl:Class ;
@@ -169,11 +169,11 @@ top:Dier
 .
 top:DrieDCoordinaat
   rdf:type owl:Class ;
+  rdfs:comment "Een drie dimensionaal coördinaat is een coördinaat dan de ligging op in een ruimte aangeeft."@nl-nl ;
   rdfs:label "Drie dimensionaal coördinaat"@nl-nl ;
   rdfs:subClassOf top:Coordinaat ;
   owl:disjointWith top:EenDCoordinaat ;
   owl:disjointWith top:TweeDCoordinaat ;
-  skos:definition "Een drie dimensionaal coördinaat is een coördinaat dan de ligging op in een ruimte aangeeft."@nl-nl ;
 .
 top:DrieDRuimte
   rdf:type owl:Class ;
@@ -185,11 +185,11 @@ top:DrieDRuimte
 .
 top:EenDCoordinaat
   rdf:type owl:Class ;
+  rdfs:comment "Een één dimensionaal coördinaat is een coördinaat dan de ligging op een kromme aangeeft."@nl-nl ;
   rdfs:label "Eén dimensionaal coördinaat"@nl-nl ;
   rdfs:subClassOf top:Coordinaat ;
   owl:disjointWith top:DrieDCoordinaat ;
   owl:disjointWith top:TweeDCoordinaat ;
-  skos:definition "Een één dimensionaal coördinaat is een coördinaat dan de ligging op een kromme aangeeft."@nl-nl ;
 .
 top:EenDRuimte
   rdf:type owl:Class ;
@@ -202,6 +202,7 @@ top:EenDRuimte
 .
 top:Eenheid
   rdf:type owl:Class ;
+  rdfs:comment "De eenheid is het kenmerk waarmee de waarde van een grootheid betekenis geeft."@nl-nl ;
   rdfs:label "Eenheid"@nl-nl ;
   rdfs:subClassOf top:Kenmerk ;
   owl:disjointWith top:Coordinaat ;
@@ -216,10 +217,10 @@ top:Eenheid
   owl:disjointWith top:Temperatuur ;
   owl:disjointWith top:Tijd ;
   owl:disjointWith top:Tijdsduur ;
-  skos:definition "De eenheid is het kenmerk waarmee de waarde van een grootheid betekenis geeft."@nl-nl ;
 .
 top:ElectrischeStroom
   rdf:type owl:Class ;
+  rdfs:comment "De elecrische stroom is een kenmerk dat de verplaatsing van elektrische lading door een geleider uitdruikt."@nl-nl ;
   rdfs:label "Electrische stroom"@nl-nl ;
   rdfs:subClassOf top:Kenmerk ;
   owl:disjointWith top:Coordinaat ;
@@ -234,7 +235,6 @@ top:ElectrischeStroom
   owl:disjointWith top:Temperatuur ;
   owl:disjointWith top:Tijd ;
   owl:disjointWith top:Tijdsduur ;
-  skos:definition "De elecrische stroom is een kenmerk dat de verplaatsing van elektrische lading door een geleider uitdruikt."@nl-nl ;
 .
 top:Email
   rdf:type owl:Class ;
@@ -262,6 +262,7 @@ top:EmailStructuur
 .
 top:Energie
   rdf:type owl:Class ;
+  rdfs:comment "Energie is een eigenschap dat het vermogen om arbeid te verrichten aangeeft."@nl-nl ;
   rdfs:label "Energie"@nl-nl ;
   rdfs:subClassOf top:Kenmerk ;
   owl:disjointWith top:Coordinaat ;
@@ -276,14 +277,13 @@ top:Energie
   owl:disjointWith top:Temperatuur ;
   owl:disjointWith top:Tijd ;
   owl:disjointWith top:Tijdsduur ;
-  skos:definition "Energie is een eigenschap dat het vermogen om arbeid te verrichten aangeeft."@nl-nl ;
 .
 top:Functie
   rdf:type owl:Class ;
+  rdfs:comment "Een functie is een rol bedoeld uitgevoerd te worden door een object."@nl-nl ;
   rdfs:label "Functie"@nl-nl ;
   rdfs:subClassOf top:Rol ;
   owl:disjointWith top:Asset ;
-  skos:definition "Een functie is een rol bedoeld uitgevoerd te worden door een object."@nl-nl ;
 .
 top:FysiekObject
   rdf:type owl:Class ;
@@ -300,10 +300,10 @@ top:FysiekeRuimte
 .
 top:GeordendeVerzameling
   rdf:type owl:Class ;
+  rdfs:comment "Een geordende verzameling is een verzameling waarvan de gebundelde dingen een volgorde hebben."@nl-nl ;
   rdfs:label "Geordende verzameling"@nl-nl ;
   rdfs:subClassOf top:Verzameling ;
   owl:disjointWith top:OngeordendeVerzameling ;
-  skos:definition "Een geordende verzameling is een verzameling waarvan de gebundelde dingen een volgorde hebben."@nl-nl ;
 .
 top:Grind
   rdf:type owl:Class ;
@@ -314,6 +314,7 @@ top:Grind
 .
 top:Hoeveelheid
   rdf:type owl:Class ;
+  rdfs:comment "De hoeveelheid is een kenmerk dat de kwantiteit waarin iets aanwezig is uitdrukt."@nl-nl ;
   rdfs:label "Hoeveelheid"@nl-nl ;
   rdfs:subClassOf top:Kenmerk ;
   owl:disjointWith top:Coordinaat ;
@@ -328,7 +329,6 @@ top:Hoeveelheid
   owl:disjointWith top:Temperatuur ;
   owl:disjointWith top:Tijd ;
   owl:disjointWith top:Tijdsduur ;
-  skos:definition "De hoeveelheid is een kenmerk dat de kwantiteit waarin iets aanwezig is uitdrukt."@nl-nl ;
 .
 top:HoeveelheidStof
   rdf:type owl:Class ;
@@ -361,14 +361,15 @@ top:IJzer
 .
 top:Informatie
   rdf:type owl:Class ;
+  rdfs:comment "Informatie is een object dat kennis of betekenis heeft bedoeld om te gebruiken of over te dragen."@nl-nl ;
   rdfs:label "Informatie"@nl-nl ;
   rdfs:subClassOf top:Object ;
   owl:disjointWith top:FysiekeRuimte ;
   owl:disjointWith top:Systeem ;
-  skos:definition "Informatie is een object dat kennis of betekenis heeft bedoeld om te gebruiken of over te dragen."@nl-nl ;
 .
 top:Kenmerk
   rdf:type owl:Class ;
+  rdfs:comment "Een kenmerk of eigenschap is een ding van een object waaraan men dat object kan onderscheiden of identificeren."@nl-nl ;
   rdfs:label "Kenmerk"@nl-nl ;
   rdfs:subClassOf owl:Thing ;
   owl:disjointWith top:Activiteit ;
@@ -376,7 +377,6 @@ top:Kenmerk
   owl:disjointWith top:Rol ;
   owl:disjointWith top:Verzameling ;
   owl:disjointWith owl:Nothing ;
-  skos:definition "Een kenmerk of eigenschap is een ding van een object waaraan men dat object kan onderscheiden of identificeren."@nl-nl ;
 .
 top:Label
   rdf:type owl:Class ;
@@ -397,6 +397,7 @@ top:Label
 .
 top:Lengte
   rdf:type owl:Class ;
+  rdfs:comment "Een lengte is het kenmerk dat een ruimtelijke afstand aangeeft."@nl-nl ;
   rdfs:label "Lengte"@nl-nl ;
   rdfs:subClassOf top:Kenmerk ;
   owl:disjointWith top:Coordinaat ;
@@ -411,10 +412,10 @@ top:Lengte
   owl:disjointWith top:Temperatuur ;
   owl:disjointWith top:Tijd ;
   owl:disjointWith top:Tijdsduur ;
-  skos:definition "Een lengte is het kenmerk dat een ruimtelijke afstand aangeeft."@nl-nl ;
 .
 top:Lichtsterkte
   rdf:type owl:Class ;
+  rdfs:comment "De lichtsterkte is een kenmerk dat de mate van helderheid van een lichtbron uitdrukt."@nl-nl ;
   rdfs:label "Lichtsterkte"@nl-nl ;
   rdfs:subClassOf top:Kenmerk ;
   owl:disjointWith top:Coordinaat ;
@@ -429,7 +430,6 @@ top:Lichtsterkte
   owl:disjointWith top:Temperatuur ;
   owl:disjointWith top:Tijd ;
   owl:disjointWith top:Tijdsduur ;
-  skos:definition "De lichtsterkte is een kenmerk dat de mate van helderheid van een lichtbron uitdrukt."@nl-nl ;
 .
 top:Lid
   rdf:type owl:Class ;
@@ -446,6 +446,7 @@ top:Lid
 .
 top:Massa
   rdf:type owl:Class ;
+  rdfs:comment "De massa is een eigenschap van fysiek object die tot uitdrukking brengt in welke mate het zich verzet tegen veranderingen van snelheid."@nl-nl ;
   rdfs:label "Massa"@nl-nl ;
   rdfs:subClassOf top:Kenmerk ;
   owl:disjointWith top:Coordinaat ;
@@ -460,7 +461,6 @@ top:Massa
   owl:disjointWith top:Temperatuur ;
   owl:disjointWith top:Tijd ;
   owl:disjointWith top:Tijdsduur ;
-  skos:definition "De massa is een eigenschap van fysiek object die tot uitdrukking brengt in welke mate het zich verzet tegen veranderingen van snelheid."@nl-nl ;
 .
 top:Materiaal
   rdf:type owl:Class ;
@@ -521,13 +521,14 @@ top:Object
 .
 top:OngeordendeVerzameling
   rdf:type owl:Class ;
+  rdfs:comment "Een ongeordende verzameling is een verzameling waarvan de gebundelde dingen geen volgorde hebben."@nl-nl ;
   rdfs:label "Ongeordende verzameling"@nl-nl ;
   rdfs:subClassOf top:Verzameling ;
   owl:disjointWith top:GeordendeVerzameling ;
-  skos:definition "Een ongeordende verzameling is een verzameling waarvan de gebundelde dingen geen volgorde hebben."@nl-nl ;
 .
 top:Organisatie
   rdf:type owl:Class ;
+  rdfs:comment "Een organisatie is informatie over een samenwerking tussen organisaties en/of personen."@nl-nl ;
   rdfs:label "Organisatie"@nl-nl ;
   rdfs:subClassOf top:Informatie ;
   owl:disjointWith top:Boek ;
@@ -536,7 +537,6 @@ top:Organisatie
   owl:disjointWith top:Memo ;
   owl:disjointWith top:Rapport ;
   owl:disjointWith top:Verslag ;
-  skos:definition "Een organisatie is informatie over een samenwerking tussen organisaties en/of personen."@nl-nl ;
 .
 top:Paragraaf
   rdf:type owl:Class ;
@@ -575,12 +575,13 @@ top:Postcode
 .
 top:Prestatie
   rdf:type owl:Class ;
+  rdfs:comment "Een prestatie is een functie met een erkend resultaat."@nl-nl ;
   rdfs:label "Prestatie"@nl-nl ;
   rdfs:subClassOf top:Functie ;
-  skos:definition "Een prestatie is een functie met een erkend resultaat."@nl-nl ;
 .
 top:Process
   rdf:type owl:Class ;
+  rdfs:comment "Een proces is een geordende verzameling van activiteiten bedoeld om uit te voeren op een invoer tot een bepaalde uitvoer met behulp van bepaalde middelen volgens een bepaalde richtlijn of recept."@nl-nl ;
   rdfs:label "Process"@nl-nl ;
   rdfs:subClassOf top:GeordendeVerzameling ;
   owl:disjointWith top:Alinea ;
@@ -591,7 +592,6 @@ top:Process
   owl:disjointWith top:Hoofdstuk ;
   owl:disjointWith top:Lid ;
   owl:disjointWith top:Paragraaf ;
-  skos:definition "Een proces is een geordende verzameling van activiteiten bedoeld om uit te voeren op een invoer tot een bepaalde uitvoer met behulp van bepaalde middelen volgens een bepaalde richtlijn of recept."@nl-nl ;
 .
 top:Rapport
   rdf:type owl:Class ;
@@ -606,6 +606,7 @@ top:Rapport
 .
 top:Rol
   rdf:type owl:Class ;
+  rdfs:comment "Een rol is iets (een ding) dat wordt gespeeld door een object in een activiteit of status."@nl-nl ;
   rdfs:label "Rol"@nl-nl ;
   rdfs:subClassOf owl:Thing ;
   owl:disjointWith top:Activiteit ;
@@ -613,7 +614,6 @@ top:Rol
   owl:disjointWith top:Object ;
   owl:disjointWith top:Verzameling ;
   owl:disjointWith owl:Nothing ;
-  skos:definition "Een rol is iets (een ding) dat wordt gespeeld door een object in een activiteit of status."@nl-nl ;
   skos:example "Een mok die dienst doet als presse papier. Dan is presse papier een rol van de mok."@nl-nl ;
 .
 top:Significantie
@@ -635,14 +635,15 @@ top:Significantie
 .
 top:Systeem
   rdf:type owl:Class ;
+  rdfs:comment "Een systeem is een object bedoeld om een functie uit te voeren."@nl-nl ;
   rdfs:label "Systeem"@nl-nl ;
   rdfs:subClassOf top:Object ;
   owl:disjointWith top:FysiekeRuimte ;
   owl:disjointWith top:Informatie ;
-  skos:definition "Een systeem is een object bedoeld om een functie uit te voeren."@nl-nl ;
 .
 top:Temperatuur
   rdf:type owl:Class ;
+  rdfs:comment "De temperatuur is een kenmerk dat de mate van warmte uitdrukt."@nl-nl ;
   rdfs:label "Temperatuur"@nl-nl ;
   rdfs:subClassOf top:Kenmerk ;
   owl:disjointWith top:Coordinaat ;
@@ -657,7 +658,6 @@ top:Temperatuur
   owl:disjointWith top:Significantie ;
   owl:disjointWith top:Tijd ;
   owl:disjointWith top:Tijdsduur ;
-  skos:definition "De temperatuur is een kenmerk dat de mate van warmte uitdrukt."@nl-nl ;
 .
 top:Tijd
   rdf:type owl:Class ;
@@ -695,11 +695,11 @@ top:Tijdsduur
 .
 top:TweeDCoordinaat
   rdf:type owl:Class ;
+  rdfs:comment "Een twee dimensionaal coördinaat is een coördinaat dat de ligging op een (opper)vlak aangeeft."@nl-nl ;
   rdfs:label "Twee dimensionaal coördinaat"@nl-nl ;
   rdfs:subClassOf top:Coordinaat ;
   owl:disjointWith top:DrieDCoordinaat ;
   owl:disjointWith top:EenDCoordinaat ;
-  skos:definition "Een twee dimensionaal coördinaat is een coördinaat dat de ligging op een (opper)vlak aangeeft."@nl-nl ;
 .
 top:TweeDRuimte
   rdf:type owl:Class ;
@@ -712,9 +712,9 @@ top:TweeDRuimte
 .
 top:Vegetatie
   rdf:type owl:Class ;
+  rdfs:comment "Vegetatie is een ongeordende verzameling van plantenleven (op een bepaalde plaats)."@nl-nl ;
   rdfs:label "Groen"@nl-nl ;
   rdfs:subClassOf top:OngeordendeVerzameling ;
-  skos:definition "Vegetatie is een ongeordende verzameling van plantenleven (op een bepaalde plaats)."@nl-nl ;
 .
 top:Verslag
   rdf:type owl:Class ;
@@ -729,6 +729,7 @@ top:Verslag
 .
 top:Verzameling
   rdf:type owl:Class ;
+  rdfs:comment "Een verzameling is een ding dat een meervoud aan dingen bundelt op basis van een of meer gedeelde kenmerken."@nl-nl ;
   rdfs:label "Verzameling"@nl-nl ;
   rdfs:subClassOf owl:Thing ;
   owl:disjointWith top:Activiteit ;
@@ -736,15 +737,14 @@ top:Verzameling
   owl:disjointWith top:Object ;
   owl:disjointWith top:Rol ;
   owl:disjointWith owl:Nothing ;
-  skos:definition "Een verzameling is een ding dat een meervoud aan dingen bundelt op basis van een of meer gedeelde kenmerken."@nl-nl ;
 .
 top:VlakCoordinaat
   rdf:type owl:Class ;
+  rdfs:comment "Een vlak coördinaat is een twee dimensionaal coördinaat dat de ligging op een vlak aangeeft."@nl-nl ;
   rdfs:label "Vlak coördinaat"@nl-nl ;
   rdfs:subClassOf top:TweeDCoordinaat ;
   owl:disjointWith top:BolCoordinaat ;
   owl:disjointWith top:CylinderCoordinaat ;
-  skos:definition "Een vlak coördinaat is een twee dimensionaal coördinaat dat de ligging op een vlak aangeeft."@nl-nl ;
 .
 top:Zand
   rdf:type owl:Class ;
